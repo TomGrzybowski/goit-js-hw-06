@@ -18,13 +18,13 @@ const list = document.querySelector(".gallery");
 const imagesElems = [];
 
 const markup = images
-  .map((img) => `<li><img url="${img.url}" alt="${img.alt}".></img></li>`)
+  .map(
+    (img) =>
+      `<li><img class="gallery_image" src="${img.url}" alt="${img.alt}".></img></li>`
+  )
   .join("");
 
 list.insertAdjacentHTML("beforeend", markup);
-list.style.display = "Flex";
-list.style.listStyle = "none";
-list.style.padding = "5px";
 
 //ALTERNATIVE SOLUTION
 // images.forEach((el) => {
