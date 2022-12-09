@@ -1,3 +1,4 @@
+"use strict";
 const images = [
   {
     url: "https://images.pexels.com/photos/140134/pexels-photo-140134.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
@@ -16,14 +17,22 @@ const images = [
 const list = document.querySelector(".gallery");
 const imagesElems = [];
 
-images.forEach((el) => {
-  const li = document.createElement("li");
-  const img = document.createElement("img");
+const markup = images
+  .map((img) => `<li><img url="${img.url}" alt="${img.alt}".></img></li>`)
+  .join("");
 
-  img.setAttribute("url", el.url);
-  img.setAttribute("alt", el.alt);
+list.insertAdjacentHTML("beforeend", markup);
+list.style.display = "Flex";
+list.style.listStyle = "none";
+list.style.padding = "5px";
 
-  imagesElems.push(img);
-});
+//ALTERNATIVE SOLUTION
+// images.forEach((el) => {
+//   const li = document.createElement("li");
+//   const img = document.createElement("img");
 
-list.append(...imagesElems);
+//   img.setAttribute("url", el.url);
+//   img.setAttribute("alt", el.alt);
+
+//   list.append(img);
+// });
