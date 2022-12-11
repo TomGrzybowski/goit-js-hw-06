@@ -11,6 +11,8 @@ function checkInputs() {
   inputs.forEach((el) => {
     if (el.value === "") {
       isEmpty = true;
+    } else {
+      isEmpty = false;
     }
   });
 }
