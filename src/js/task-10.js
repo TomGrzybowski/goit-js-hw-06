@@ -34,9 +34,9 @@ function createBoxes() {
 
     boxes.append(div);
   }
-  size = 30;
 }
 
 function destroyBoxes() {
   boxes.innerHTML = "";
+  size = 30;
 }

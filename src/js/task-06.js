@@ -9,7 +9,9 @@ inputBox.addEventListener("blur", (e) => {
 
   if (currentValue === correctValue) {
     inputBox.classList.add("valid");
+    inputBox.classList.remove("invalid");
   } else {
     inputBox.classList.add("invalid");
+    inputBox.classList.remove("valid");
   }
 });
